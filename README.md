@@ -39,6 +39,12 @@ Send a single deposit. If the amount is outside the limits, a refund will happen
 Thank you for using MorphToken
 ```
 
+Lookup an existing trade
+
+```
+$ morphcli view --id morphidhere
+```
+
 
 ## Usage
 
