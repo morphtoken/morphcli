@@ -60,8 +60,17 @@ func FormatAmount(asset string, amount json.Number) string {
 		log.Println("Failed to convert number")
 	}
 	float := new(big.Float).SetInt(num)
-	div := new(big.Float).Quo(float, big.NewFloat(1e8))
-	return fmt.Sprintf("%.8f", div)
+    factor := new(big.Int)
+    switch asset {
+        case "ETH":
+            factor, _ = factor.SetString("1000000000000000000", 10)
+        case "XMR":
+            factor, _ = factor.SetString("1000000000000", 10)
+        default:
+            factor, _ = factor.SetString("100000000", 10)
+    }
+	div := new(big.Float).Quo(float, new(big.Float).SetInt(factor))
+	return fmt.Sprintf("%.6f", div)
 }
 
 func DisplayTrade(trade *Trade) {
