@@ -1,5 +1,8 @@
 # Morphtoken CLI
 
+Download the latest binary for your platform at https://github.com/morphtoken/morphcli/releases
+
+
 ## Examples
 
 View current rates:
