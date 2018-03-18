@@ -77,7 +77,7 @@ GLOBAL OPTIONS:
    --version, -v  print the version
 ```
 
-## Install
+## Developer Install
 
 To install, use `go get`:
 
