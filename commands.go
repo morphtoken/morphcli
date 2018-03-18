@@ -10,7 +10,6 @@ import (
 
 var GlobalFlags = []cli.Flag{}
 
-
 var Commands = []cli.Command{
 	{
 		Name:   "rates",
@@ -22,36 +21,36 @@ var Commands = []cli.Command{
 		Name:   "exchange",
 		Usage:  "Exchange one coin for another",
 		Action: command.CmdExchange,
-		Flags:  []cli.Flag{
-            cli.StringFlag{
-                Name: "input",
-                Usage: "Input asset to convert from",
-            },
-            cli.StringFlag{
-                Name: "output",
-                Usage: "Output asset to convert to",
-            },
-            cli.StringFlag{
-                Name: "address",
-                Usage: "Address that will receive the output",
-            },
-            cli.StringFlag{
-                Name: "refund",
-                Usage: "Refund address to use in case it becomes necessary",
-            },
-        },
+		Flags: []cli.Flag{
+			cli.StringFlag{
+				Name:  "input",
+				Usage: "Input asset to convert from",
+			},
+			cli.StringFlag{
+				Name:  "output",
+				Usage: "Output asset to convert to",
+			},
+			cli.StringFlag{
+				Name:  "address",
+				Usage: "Address that will receive the output",
+			},
+			cli.StringFlag{
+				Name:  "refund",
+				Usage: "Refund address to use in case it becomes necessary",
+			},
+		},
 	},
-    {
-        Name:   "view",
-        Usage:  "Fetch an existing trade",
-        Action: command.CmdView,
-        Flags: []cli.Flag{
-            cli.StringFlag{
-                Name: "id",
-                Usage: "Morph trade to lookup, pass its id or the deposit address",
-            },
-        },
-    },
+	{
+		Name:   "view",
+		Usage:  "Fetch an existing trade",
+		Action: command.CmdView,
+		Flags: []cli.Flag{
+			cli.StringFlag{
+				Name:  "id",
+				Usage: "Morph trade to lookup, pass its id or the deposit address",
+			},
+		},
+	},
 }
 
 func CommandNotFound(c *cli.Context, command string) {

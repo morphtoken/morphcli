@@ -13,7 +13,7 @@ func main() {
 	app.Author = "morphtoken"
 	app.Name = "MorphToken CLI"
 	app.Email = "contact@morphtoken.com"
-    app.Usage = "Exchange coins instantly from your terminal"
+	app.Usage = "Exchange coins instantly from your terminal"
 
 	app.Flags = GlobalFlags
 	app.Commands = Commands
